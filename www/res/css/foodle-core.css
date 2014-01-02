@@ -46,8 +46,8 @@ h3 {	font-size: 110%;}
 }
 #header #ulogo {
 	position: absolute;
-	top: 10px; right: 20px;
-	z-index: 10;
+	top: 2px; right: 10px;
+	z-index: 0;
 	border: 0px;
 }
 
