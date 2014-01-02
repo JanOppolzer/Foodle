@@ -48,7 +48,9 @@ class Pages_Login extends Pages_Page {
 					$this->auth->requireAuth(FALSE);
 				} else {
 					error_log('Foodle /login Send user to discovery service...');
-					SimpleSAML_Utilities::redirect($this->auth->disco . '?entityID=' . 
+					SimpleSAML_Utilities::redirect($this->auth->disco . '?filter=' . 
+						$this->config->getValue('discoFilter') .
+						'&entityID=' .
 						urlencode($this->auth->entityid)  . 
 						'&returnIDParam=idp' .
 						'&return=' . urlencode(FoodleUtils::getURL() . 'login?')

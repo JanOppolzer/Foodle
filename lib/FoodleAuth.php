@@ -492,7 +492,9 @@ class FoodleAuth {
 		
 		if (!$allowAnonymous) {
 		
-			SimpleSAML_Utilities::redirect($this->disco . '?entityID=' . 
+			SimpleSAML_Utilities::redirect($this->disco . '?filter=' . 
+				$this->config->getValue('discoFilter') .
+				'&entityID=' .
 				urlencode($this->auth->entityid)  . 
 				'&returnIDParam=idp' .
 				'&return=' . urlencode(SimpleSAML_Utilities::selfURL() . '?')

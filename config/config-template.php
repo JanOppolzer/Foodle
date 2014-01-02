@@ -7,9 +7,12 @@
  */
 
 $config = array (
+	'entityid'		=> 'https://www.example.org/sp',
+	'disco'			=> 'https://ds.eduid.cz/wayf.php',
+	'discoFilter'	=> 'eyJhbGxvd0hvc3RlbCI6IHRydWUsICJhbGxvd0hvc3RlbFJlZyI6IHRydWV9',
 
-	'simplesamlphpdir'   => NULL,
-	'basedir'            => '/www/foodle.feide.no/',
+	'simplesamlphpdir'   => '/var/simplesamlphp/',
+	'basedir'            => '/var/www/foodle/',
 	'baseurlpath'        => '',
 	'secret' => 'sdf9sdf765sdf765sdfytux657',
 	
@@ -27,7 +30,7 @@ $config = array (
 	'auth' => 'default-sp',
 	
 	// This user IDs will see a list of all foodles on the front page.
-	'adminUsers' => array('andreas@rnd.feide.no', 'andreas@uninett.no'),
+	'adminUsers' => array('jan.oppolzer@cesnet.cz'),
 	
 	// Enable login from facebook, and links to share current foodle on facebook.
 	'enableFacebookAuth' => FALSE,
