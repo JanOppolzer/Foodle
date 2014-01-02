@@ -32,6 +32,7 @@ $entityid = $config->getValue('entityid');
 $feeds = $config->getArrayize('feeds', array('edugain'));
 $responseurl = FoodleUtils::getUrl() . 'discoresponse';
 
+/*
 $discojuiceconfig = '
 	"Foodle",
     "' . $entityid . '",
@@ -39,6 +40,7 @@ $discojuiceconfig = '
 	' . json_encode($feeds) . ',
 	"http://foodl.org/?idp="
 ';
+*/
 
 
 ?>
@@ -69,6 +71,7 @@ $discojuiceconfig = '
 
 	
 
+<!--
 	<script type="text/javascript">
 		var djc = DiscoJuice.Hosted.getConfig(<?php echo $discojuiceconfig; ?>);
 		djc.overlay = true;
@@ -79,6 +82,7 @@ $discojuiceconfig = '
 		};
 		
 <?php
+/*
 	echo "
 		djc.metadata.push('" . FoodleUtils::getUrl(). "/extradiscofeed');
 		djc.disco.subIDwritableStores = {};
@@ -88,6 +92,7 @@ $discojuiceconfig = '
 		
 	";
 		
+*/
 ?>
 
 
@@ -115,6 +120,7 @@ $discojuiceconfig = '
 		});
 
 	</script>
+-->
 
 
 	<script type="text/javascript">
@@ -223,19 +229,18 @@ echo '<title>' . $title . '</title>';
 
 ?>
 
-	
+
+<!-- CESNET's Discovery Service -->	
+<script type="text/javascript" src="https://ds.eduid.cz/ds.js"></script>
+
 </head>
 <body>
 
 <!-- Red logo header -->
 <div id="header">	
 	<div id="logo">Foodle <span id="version"><?php echo $this->t('version'); ?> 3.4</span> 
-		<a id="news" style="font-size: small; color: white" target="_blank" href="http://rnd.feide.no/category/foodle/">
-			∘ <?php echo $this->t('read_news'); ?></a>  
-		<a id="mailinglist" style="font-size: small; color: white" target="_blank" href="http://rnd.feide.no/software/foodle/">
-			∘ <?php echo $this->t('join_mailinglist'); ?></a>
 	</div><!-- end #logo -->
-	<a href="http://rnd.feide.no"><img id="ulogo" alt="notes" src="/res/uninettlogo.gif" /></a>
+	<a href="http://www.eduid.cz" title="eduID.cz"><img id="ulogo" alt="eduID.cz homepage" src="/res/eduid-logo-80-white-transparent.png" /></a>
 </div><!-- end #header -->
 
 
@@ -279,7 +284,7 @@ echo '</p>';
 
 
 	if (isset($this->data['loginurl'])) {
-		echo '<a class="button signin" style="float: right" href="' . htmlentities($this->data['loginurl']) . '"><span>' . $this->t('login') . '</span></a>';
+		echo '<a class="button signin" style="float: right" href="/login?" onClick="startOverlay(event)"><span>' . $this->t('login') . '</span></a>';
 	} elseif(isset($this->data['logouturl'])) {
 		echo '<a class="button" style="float: right" href="' . htmlentities($this->data['logouturl']) . '"><span>' . $this->t('logout') . '</span></a>';
 	}
@@ -288,12 +293,6 @@ echo '</p>';
 		echo '<a class="button" style="float: right" href="' . htmlentities('/profile') . '"><span>' . $this->t('myprofile') . '</span></a>';
 	}
 
-	
-	if (isset($this->data['showsupport'])) {
-		echo '<a class="button" style="float: right" href="' . htmlentities('/support') . '"><span>' . $this->t('support') . '</span></a>';
-	}
-
-	
 	if (array_key_exists('facebookshare', $this->data) && $this->data['facebookshare']) {
 		echo '<a class="button" style="float: right" onclick="showFacebookShare()"><span>' . $this->t('facebookshare') . '</span></a>';
 	}
