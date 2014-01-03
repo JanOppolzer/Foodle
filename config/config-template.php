@@ -7,9 +7,12 @@
  */
 
 $config = array (
-	'entityid'		=> 'https://www.example.org/sp',
+	'entityid'		=> 'https://www.foodle.cz/sp',
 	'disco'			=> 'https://ds.eduid.cz/wayf.php',
 	'discoFilter'	=> 'eyJhbGxvd0hvc3RlbCI6IHRydWUsICJhbGxvd0hvc3RlbFJlZyI6IHRydWV9',
+	'siteAddress'   => 'https://www.foodle.cz',
+	'siteName'  => 'foodle.cz',
+	'fromName'  => 'foodle.cz',
 
 	'simplesamlphpdir'   => '/var/simplesamlphp/',
 	'basedir'            => '/var/www/foodle/',
@@ -36,7 +39,7 @@ $config = array (
 	'enableFacebookAuth' => FALSE,
 	
 	// E-mails from Foodle to end-users is sent from this address.
-	'fromAddress' => 'no-reply@foodle.example.org',
+	'fromAddress' => 'no-reply@foodle.cz',
 	
 	'getsatisfaction.key' => 'xxx',
 	'getsatisfaction.secret' => 'xxx',

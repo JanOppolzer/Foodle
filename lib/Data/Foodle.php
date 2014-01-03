@@ -177,7 +177,7 @@ class Data_Foodle {
 		if (empty($this->expire)) return 'This foodle will not expire';
 		if ($this->isExpired()) return 'This foodle is expired';
 
-		return 'Expires in ' . FoodleUtils::date_diff((int)$this->expire - time()) . '';
+		return 'Expiruje za ' . FoodleUtils::date_diff((int)$this->expire - time()) . '';
 	}
 	
 	public function timezoneEnabled() {
@@ -1117,7 +1117,7 @@ class Data_Foodle {
 		if (empty($this->expire)) return 'This foodle will not expire';
 		if ($this->isExpired()) return 'This foodle is expired';
 		
-		return date("Y-m-d H:i", (int)$this->expire) . ' (expires in ' . FoodleUtils::date_diff((int)$this->expire - time()) . ')';
+		return date("Y-m-d H:i", (int)$this->expire) . ' (expiruje za ' . FoodleUtils::date_diff((int)$this->expire - time()) . ')';
 	}	
 	
 	

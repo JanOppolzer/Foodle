@@ -260,21 +260,21 @@ class FoodleAuth {
 		
 		$url =  FoodleUtils::getUrl() . '?sessionBootstrap=' . $this->getBootstrap();
 		
-		$message = '<h2>Foodle</h2><p>It seems like you have been using Foodle for the first time. Welcome!
-			<p>You have been using Foodle as an anonymous user, and we send you this e-mail so that you can
-			edit your Foodle response by going to the special URL below.</p>
-			<p>We strongly reccomend that instead of using Foodle as a anonymous user, you use the login button
-			to login to your home institusions user ID. If you do not have an user accout, you may create one for free, by
-			using the Feide Guest IdP.</p>
+		$message = '<h2>Foodle</h2><p>Vypadá to, že jste použil(a) Foodle poprvé. Vítejte!
+			<p>Použil jste Foodle jako anonymní uživatel a tento e-mail dostáváte,
+			abyste mohl změnit svou odpověď, pokud půjdete na speciální URdL aresu níže.</p>
+			<p>Výrazně doporučujeme, abyste se namísto anonymního používání Foodle přihlásil přes tlačítko přihlášení
+			a využil přihlašovací údaje své domovské organizace. Pokud nemáte žádný uživatelský účet,
+			můžete si ho vytvorit zdarma využitím Feide Guest IdP.</p>
 			
-			<p>The URL to edit your Foodle response is:</p>
+			<p>URL adresa pro aktualizaci vaší odpovědi je:</p>
 			
 			<p><tt>' . htmlspecialchars($url) . '</tt></p>
 			
-			<p><a href="' . htmlspecialchars($url) . '">Go here to edit your Foodle</a></p>
+			<p><a href="' . htmlspecialchars($url) . '">Odkaz k úpravě vašeho Foodle</a></p>
 		';
 		
-		$email = new SimpleSAML_XHTML_EMail($this->user->email, 'Welcome to Foodle', $fromAddress);
+		$email = new SimpleSAML_XHTML_EMail($this->user->email, 'Vítejte ve Foodle', $fromAddress);
 		$email->setBody($message);
 		$email->send();
 		

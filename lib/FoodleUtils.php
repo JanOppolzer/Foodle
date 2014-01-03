@@ -46,7 +46,7 @@ class FoodleUtils {
 		$nseconds = $nseconds % 60;
 
 		if ($ndays > 0) 
-			return $ndays . " days";
+			return $ndays . " dní";
 		elseif ($nhours > 0) 
 			return $nhours . "h " . $nminutes . "m";
 		elseif ($nminutes > 0) 

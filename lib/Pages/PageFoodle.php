@@ -126,21 +126,21 @@ class Pages_PageFoodle extends Pages_Page {
 		$to = $this->user->email;
 		$mail = '
 		
-Hi, your response to the Foodle named <i>' . htmlspecialchars($name) . '</i> was successfully stored.</p>
+Zdravím, vaše odpověď na Foodle nazvaný <i>' . htmlspecialchars($name) . '</i> byla úspěšně uložena.</p>
 
-You may re-enter the Foodle link below to update your response, and view other responses:
+Můžete použít odkaz uvedený níže pro aktualizaci vaší odpovědi a pro zobrazení odpovědí ostatních účastníků:
 
-* [Edit your Foodle response](' . $url . ')
-* [View responses of other participants](' . $url . '#responses)
+* [Upravit vaši odpověď](' . $url . ')
+* [Zobrazit odpovědi ostatních účastníků](' . $url . '#responses)
 
-### Did you know
+### Věděli jste, že...
 
-You may also create new Foodles on your own, and invite others to respond.
+Můžete také vytvořit svůj vlastní Foodle a pozvat ostatní, aby odpověděli?
 
-* [Go to Foodl.org to create a new Foodle.](http://foodl.org)
+* [Jděte na '.$this->config->getValue('siteName').' a vytvořte nový Foodle.]('.$this->config->getValue('siteAddress').')
 
 		';
-		$mailer = new Foodle_EMail($to, 'Foodle: ' . htmlspecialchars($name), 'Foodl.org <no-reply@foodl.org>');
+		$mailer = new Foodle_EMail($to, 'Foodle: ' . htmlspecialchars($name), $this->config->getValue('fromAddress'));
 		$mailer->setBody($mail);
 		$mailer->send();
 		

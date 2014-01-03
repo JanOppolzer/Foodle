@@ -383,7 +383,7 @@ if (isset($_REQUEST['timezone'])) {
 
 
 		<?php if ($this->data['myresponse']->loadedFromDB) {  ?>
-			<div style="border: 1px solid #caa; border-radius: 5px; background: #ecc; padding: 5px 10px; max-width: 300px">Delete your response?  <input type="submit" name="deleteMyResponse" value="Delete" /></div>
+			<div style="border: 1px solid #caa; border-radius: 5px; background: #ecc; padding: 5px 10px; max-width: 300px"><?php echo $this->t('response_delete'); ?>  <input type="submit" name="deleteMyResponse" value="<?php echo $this->t('delete'); ?>" /></div>
 		<?php } ?>
 
 
@@ -822,12 +822,12 @@ echo '
 
 <div id="contactlist" style="margin: .2em 5em .2em 5em; padding: 3em 0px; ">
 
-	<p>You may build a group based upon the people that responded to this Foodle.</p>
+	<p>'.$this->t('groups_par3').'</p>
 	
-	<p>A group will allow you to later easily send an invitation to the same people.</p>
+	<p>'.$this->t('groups_par4').'</p>
 
 	<form action="/groups" method="get">
-		<input type="submit" value="Manage groups" />	
+		<input type="submit" value="'.$this->t('groups_manage').'" />	
 		<input type="hidden" name="foodleid" value="' . $this->data['foodle']->identifier . '" />
 	</form>
 

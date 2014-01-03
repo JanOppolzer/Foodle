@@ -350,7 +350,7 @@ FOODLE.data.Activity = (function() {
 		html = html + '<p class="persons">';
 		
 		if (this.obj.responses) {
-			html = html + 'Latest responses ';
+			html = html + 'Poslední odpovědi ';
 			for (var i = 0; i < this.obj.responses.length; i++) {
 				html = html + '<img style="position:relative: top: 3px" src="/res/user_grey.png" />' + 
 					utils.escape(this.obj.responses[i].name) + ' ';
@@ -367,7 +367,7 @@ FOODLE.data.Activity = (function() {
 		
 		if (this.obj.ago) {
 			html = '<div style="margin: 3px .4em; padding: 3px; float: right">' + 
-				utils.escape(this.obj.ago) + ' ago</div>' + html;
+				utils.escape(this.obj.ago) + ' zpět</div>' + html;
 		}
 	
 		html = '<div class="activity ' + utils.escape(this.obj.type) + '">' + html + '</div>';

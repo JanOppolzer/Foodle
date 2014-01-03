@@ -1,7 +1,7 @@
 <?php
 
 
-$SIMPLESAMLPATH = '/var/simplesamlphp-foodle/';
+$SIMPLESAMLPATH = '/var/simplesamlphp/';
 
 $path_extra = $SIMPLESAMLPATH . 'lib';
 $path = ini_get('include_path');
@@ -14,7 +14,7 @@ require_once($SIMPLESAMLPATH . 'modules/oauth/libextinc/OAuth.php');
 
 $THISPATH = dirname(dirname(__FILE__)) . '/';
 
-date_default_timezone_set('Europe/Berlin');
+date_default_timezone_set('Europe/Prague');
 
 
 

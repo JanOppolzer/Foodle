@@ -244,7 +244,7 @@ class Foodle_EMail {
 		</div><!-- /#content -->
 
 		<div id="footer">
-			This mail was sent via <a href="https://foodl.org">foodl.org</a>. Please report misuse &mdash; <a href="https://foodl.org/support">Foodle Support</a>.
+			Tento e-mail byl poslán přes <a href="http://www2.foodle.cz">foodle.cz</a>. Prosím oznamte případné zneužití &mdash; <a href="mailto:jan.oppolzer@cesnet.cz">jan.oppolzer@cesnet.cz</a>.
 		</div><!-- /#footer -->
 
 

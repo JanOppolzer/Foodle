@@ -31,7 +31,7 @@ var Foodle_Front_View = function() {
 			}	
 		}
 		if (events.length === 0) {
-			$("div#upcomming").append('<p>No Foodle events ahead. May be you should add one?</p>');
+			$("div#upcomming").append('<p>Žádné Foodle události. Můžete však vytvořit novou.</p>');
 		}
 	}
 	

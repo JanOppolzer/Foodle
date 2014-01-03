@@ -54,34 +54,34 @@ class Pages_PageCreate extends Pages_Page {
 		$name = $foodle->name;
 		$to = $this->user->email;
 		$mail = '
-Hi, your new Foodle named <i>' . htmlspecialchars($name) . '</i> was successfully created.
+Zdravím, váš nový Foodle nazvaný <i>' . htmlspecialchars($name) . '</i> byl úspěšně vytvořen.
 
-You may visit your Foodle link below to update your response, and view other responses:
+Můžete navštívit odkaz uvedený níže a upravit vaši odpověď nebo si prohlédnout odpovědi ostatních:
 
-* [Edit your Foodle response](' . $url . ')
-* [View responses of other participants](' . $url . '#responses)
+* [Upravit vaši odpověď](' . $url . ')
+* [Zobrazit odpovědi ostatních účastníků](' . $url . '#responses)
 
-If you want so invite others to respond to this Foodle, you should share the link below:
+Chcete-li pozvat ostatní, aby odpověděli na tento Foodle, sdílejte tento odkaz:
 
 	' . htmlspecialchars($url) . '
 
 
-### Notifications
+### Oznámení
 
-You can turn of this e-mail notification, and configure other notification messages <a href="' . 
-	htmlspecialchars($profileurl) . '">from your Foodle preference page</a>:
+Vypnout tyto oznamovací e-maily nebo nastavit ostatní notifikační zprávy <a href="' .
+	htmlspecialchars($profileurl) . '">můžete ze stránky nastavení vašeho účtu</a>:
 
 	' . htmlspecialchars($profileurl) . '
 
 
-### Did you know
+### Věděli jste, že...
 
-You may also create new Foodles on your own, and invite others to respond.
+Můžete také vytvořit svůj vlastní Foodle a pozvat ostatní, aby odpověděli?
 
-* [Go to Foodl.org to create a new Foodle.](http://foodl.org)
+* [Jděte na '.$this->config->getValue('siteName').' a vytvořte nový Foodle.]('.$this->config->getValue('siteAddress').')
 
 		';
-		$mailer = new Foodle_EMail($to, 'New foodle: ' . htmlspecialchars($name), 'Foodl.org <no-reply@foodl.org>');
+		$mailer = new Foodle_EMail($to, 'Nový Foodle: ' . htmlspecialchars($name), $this->config->getValue('fromAddress'));
 		$mailer->setBody($mail);
 		$mailer->send();
 		
